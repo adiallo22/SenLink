@@ -24,6 +24,7 @@ class LoginVC: UIViewController {
 
         navigationItem.title = Constants.signIn
         errorLabel.alpha = 0
+        applyStyle()
         
     }
     
@@ -33,8 +34,8 @@ class LoginVC: UIViewController {
         if error != nil {
             setError(err: error!)
         } else {
-            auth.signIn(withEmail: emailLabel.text!, password: pwdLabel.text!) { (result, error) in
-                if error != nil {
+            auth.signIn(withEmail: emailLabel.text!, password: pwdLabel.text!) { (result, err) in
+                if err != nil {
                     self.setError(err: "Wrong user or password")
                 } else {
                     self.transitionTo(here: "")
@@ -64,7 +65,7 @@ extension LoginVC {
     }
     
     func setError(err: String) {
-        errorLabel.text = checkError()
+        errorLabel.text = err
         errorLabel.alpha = 1
     }
     
@@ -76,6 +77,16 @@ extension LoginVC {
             let viewController = main.instantiateViewController(withIdentifier: "Connected") as! mainVC
             UIApplication.shared.keyWindow?.rootViewController = viewController
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func applyStyle() {
+        Style.styleTextField(emailLabel)
+        Style.styleTextField(pwdLabel)
+        Style.styleHollowButton(loginBtn)
     }
     
 }

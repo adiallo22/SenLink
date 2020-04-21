@@ -21,6 +21,7 @@ class SignupVC: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.SignUP
+        applyStyle()
         
     }
         
@@ -28,4 +29,16 @@ class SignupVC: UIViewController {
     }
     
 
+}
+
+extension SignupVC {
+    
+    func applyStyle() {
+        Style.styleTextField(emailLabel)
+        Style.styleTextField(pwdLabel)
+        Style.styleTextField(fnameLabel)
+        Style.styleTextField(lnameLabel)
+        Style.styleFilledButton(signupBtn)
+    }
+    
 }
