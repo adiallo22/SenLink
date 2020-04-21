@@ -1,5 +1,5 @@
 //
-//  SearchVC.swift
+//  HomeViewController.swift
 //  SenLink
 //
 //  Created by Abdul Diallo on 4/21/20.
@@ -8,16 +8,13 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.Search
+        navigationItem.title = Constants.Home
         
     }
-    
-
-    
 
 }

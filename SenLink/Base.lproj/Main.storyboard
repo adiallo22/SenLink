@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="3048" y="71"/>
         </scene>
-        <!--HomeVC-->
+        <!--Home View Controller-->
         <scene sceneID="3NL-Ri-1xB">
             <objects>
-                <viewController id="9UU-0G-fDl" customClass="HomeVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9UU-0G-fDl" customClass="HomeViewController" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OlG-dx-jxn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
