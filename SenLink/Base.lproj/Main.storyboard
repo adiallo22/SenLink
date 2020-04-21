@@ -99,6 +99,9 @@
                                         <rect key="frame" x="223.5" y="0.0" width="97.5" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="signupPressed:" destination="jcb-Up-mLA" eventType="touchUpInside" id="RQE-PD-269"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -125,6 +128,7 @@
                         <outlet property="loginBtn" destination="pZX-G7-eOD" id="UOX-S9-gdg"/>
                         <outlet property="pwdLabel" destination="E70-ch-dwh" id="fbN-7E-qvz"/>
                         <segue destination="xId-1A-aAf" kind="show" identifier="toSignup" id="GKF-g1-sVJ"/>
+                        <segue destination="dQh-30-YAc" kind="custom" identifier="toConnect" id="ffB-lc-w0o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYs-99-tdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,11 +146,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="B8O-O8-ppe">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Vl-aZG">
-                                <rect key="frame" x="149" y="162" width="116" height="101"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O7l-qe-EQL">
-                                <rect key="frame" x="20" y="305" width="374" height="400"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="O7l-qe-EQL">
+                                <rect key="frame" x="20" y="128" width="374" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1z-Fj-xB5">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -197,9 +198,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="B8O-O8-ppe" secondAttribute="bottom" id="7n1-Yx-OXE"/>
-                            <constraint firstItem="O7l-qe-EQL" firstAttribute="leading" secondItem="hz4-rt-8iF" secondAttribute="leading" constant="20" id="FNH-Qk-l0h"/>
+                            <constraint firstItem="O7l-qe-EQL" firstAttribute="leading" secondItem="hz4-rt-8iF" secondAttribute="leading" constant="20" id="Kou-CR-pXP"/>
+                            <constraint firstItem="O7l-qe-EQL" firstAttribute="top" secondItem="hz4-rt-8iF" secondAttribute="top" constant="40" id="Ppu-mR-4dJ"/>
                             <constraint firstItem="B8O-O8-ppe" firstAttribute="top" secondItem="SiT-qJ-wK7" secondAttribute="top" id="WJe-tH-TSh"/>
-                            <constraint firstItem="O7l-qe-EQL" firstAttribute="top" secondItem="F2n-Vl-aZG" secondAttribute="bottom" constant="40" id="ZLi-fo-LUq"/>
                             <constraint firstItem="hz4-rt-8iF" firstAttribute="trailing" secondItem="O7l-qe-EQL" secondAttribute="trailing" constant="20" id="ezE-J4-S9T"/>
                             <constraint firstItem="B8O-O8-ppe" firstAttribute="leading" secondItem="hz4-rt-8iF" secondAttribute="leading" id="sPM-gm-oCE"/>
                             <constraint firstItem="B8O-O8-ppe" firstAttribute="trailing" secondItem="hz4-rt-8iF" secondAttribute="trailing" id="tHH-xb-xAi"/>
@@ -252,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="3232" y="1016"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--MainVC-->
         <scene sceneID="GjG-4h-6bY">
             <objects>
-                <tabBarController storyboardIdentifier="Connected" id="dQh-30-YAc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Connected" id="dQh-30-YAc" customClass="mainVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6VY-p8-C6r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

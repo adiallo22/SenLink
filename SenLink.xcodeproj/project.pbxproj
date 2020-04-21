@@ -19,6 +19,7 @@
 		C03E56B9244F579F0059E4B5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56B8244F579F0059E4B5 /* Constants.swift */; };
 		C03E56BC244F60700059E4B5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56BB244F60700059E4B5 /* LoginVC.swift */; };
 		C03E56BE244F60870059E4B5 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56BD244F60870059E4B5 /* SignupVC.swift */; };
+		C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C1244F7E820059E4B5 /* mainVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C03E56B8244F579F0059E4B5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C03E56BB244F60700059E4B5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C03E56BD244F60870059E4B5 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		C03E56C1244F7E820059E4B5 /* mainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				C03E56BB244F60700059E4B5 /* LoginVC.swift */,
 				C03E56BD244F60870059E4B5 /* SignupVC.swift */,
+				C03E56C1244F7E820059E4B5 /* mainVC.swift */,
 				C03E56B6244F56E20059E4B5 /* HomeViewController.swift */,
 				C03E56B3244F54CB0059E4B5 /* SearchVC.swift */,
 				C03E56AF244F548B0059E4B5 /* NotificationVC.swift */,
@@ -179,6 +182,7 @@
 				C03E569A244F4E210059E4B5 /* AppDelegate.swift in Sources */,
 				C03E569C244F4E210059E4B5 /* SceneDelegate.swift in Sources */,
 				C03E56B9244F579F0059E4B5 /* Constants.swift in Sources */,
+				C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */,
 				C03E56B0244F548B0059E4B5 /* NotificationVC.swift in Sources */,
 				C03E56B7244F56E20059E4B5 /* HomeViewController.swift in Sources */,
 			);

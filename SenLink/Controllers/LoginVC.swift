@@ -20,11 +20,53 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.signIn
+        errorLabel.alpha = 0
         
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
+        
+        let error = checkError()
+        if error != nil {
+            setError(err: error!)
+        } else {
+            transitionTo(here: "")
+        }
+        
+    }
+    
+    
+    @IBAction func signupPressed(_ sender: UIButton) {
+        transitionTo(here: Constants.linkToSignup)
     }
     
 
+}
+
+//MARK: - section heading
+
+extension LoginVC {
+    
+    func checkError() -> String? {
+        if emailLabel.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || pwdLabel.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return "Fill in all the textfield"
+        }
+        return nil
+    }
+    
+    func setError(err: String) {
+        errorLabel.text = checkError()
+        errorLabel.alpha = 1
+    }
+    
+    func transitionTo(here : String?) {
+        if here != "" {
+            performSegue(withIdentifier: here!, sender: self)
+        } else {
+            let main : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = main.instantiateViewController(withIdentifier: "Connected") as! mainVC
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+        }
+    }
+    
 }
