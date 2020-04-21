@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28D00E27E8AC7ED80D0ECF1A /* Pods_SenLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EC02C804C64A9432FD8E7E /* Pods_SenLink.framework */; };
 		C03E569A244F4E210059E4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E5699244F4E210059E4B5 /* AppDelegate.swift */; };
 		C03E569C244F4E210059E4B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E569B244F4E210059E4B5 /* SceneDelegate.swift */; };
 		C03E56A1244F4E210059E4B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03E569F244F4E210059E4B5 /* Main.storyboard */; };
@@ -20,9 +21,13 @@
 		C03E56BC244F60700059E4B5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56BB244F60700059E4B5 /* LoginVC.swift */; };
 		C03E56BE244F60870059E4B5 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56BD244F60870059E4B5 /* SignupVC.swift */; };
 		C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C1244F7E820059E4B5 /* mainVC.swift */; };
+		C03E56C4244F81790059E4B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C03E56C3244F81790059E4B5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29EC02C804C64A9432FD8E7E /* Pods_SenLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SenLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		686DFA7ADB8687BF8F2F3CEA /* Pods-SenLink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenLink.debug.xcconfig"; path = "Target Support Files/Pods-SenLink/Pods-SenLink.debug.xcconfig"; sourceTree = "<group>"; };
+		73F916DD051EBC1DAA9B91E4 /* Pods-SenLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenLink.release.xcconfig"; path = "Target Support Files/Pods-SenLink/Pods-SenLink.release.xcconfig"; sourceTree = "<group>"; };
 		C03E5696244F4E210059E4B5 /* SenLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03E5699244F4E210059E4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03E569B244F4E210059E4B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		C03E56BB244F60700059E4B5 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C03E56BD244F60870059E4B5 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		C03E56C1244F7E820059E4B5 /* mainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainVC.swift; sourceTree = "<group>"; };
+		C03E56C3244F81790059E4B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D00E27E8AC7ED80D0ECF1A /* Pods_SenLink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BD62D08D0A55B804BEB33C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				686DFA7ADB8687BF8F2F3CEA /* Pods-SenLink.debug.xcconfig */,
+				73F916DD051EBC1DAA9B91E4 /* Pods-SenLink.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B18006CFAE7D7AB476B42FB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29EC02C804C64A9432FD8E7E /* Pods_SenLink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C03E568D244F4E210059E4B5 = {
 			isa = PBXGroup;
 			children = (
 				C03E5698244F4E210059E4B5 /* SenLink */,
 				C03E5697244F4E210059E4B5 /* Products */,
+				1BD62D08D0A55B804BEB33C6 /* Pods */,
+				B18006CFAE7D7AB476B42FB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +105,7 @@
 				C03E56A2244F4E240059E4B5 /* Assets.xcassets */,
 				C03E56A4244F4E240059E4B5 /* LaunchScreen.storyboard */,
 				C03E56A7244F4E240059E4B5 /* Info.plist */,
+				C03E56C3244F81790059E4B5 /* GoogleService-Info.plist */,
 			);
 			path = SenLink;
 			sourceTree = "<group>";
@@ -111,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C03E56AA244F4E240059E4B5 /* Build configuration list for PBXNativeTarget "SenLink" */;
 			buildPhases = (
+				C77CB46A569F4C61C3144DC7 /* [CP] Check Pods Manifest.lock */,
 				C03E5692244F4E210059E4B5 /* Sources */,
 				C03E5693244F4E210059E4B5 /* Frameworks */,
 				C03E5694244F4E210059E4B5 /* Resources */,
+				5EDA1AD8CFF7CEFBA48ACE39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,12 +193,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03E56A6244F4E240059E4B5 /* LaunchScreen.storyboard in Resources */,
+				C03E56C4244F81790059E4B5 /* GoogleService-Info.plist in Resources */,
 				C03E56A3244F4E240059E4B5 /* Assets.xcassets in Resources */,
 				C03E56A1244F4E210059E4B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EDA1AD8CFF7CEFBA48ACE39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenLink/Pods-SenLink-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SenLink/Pods-SenLink-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SenLink/Pods-SenLink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C77CB46A569F4C61C3144DC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SenLink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C03E5692244F4E210059E4B5 /* Sources */ = {
@@ -326,6 +399,7 @@
 		};
 		C03E56AB244F4E240059E4B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 686DFA7ADB8687BF8F2F3CEA /* Pods-SenLink.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -345,6 +419,7 @@
 		};
 		C03E56AC244F4E240059E4B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73F916DD051EBC1DAA9B91E4 /* Pods-SenLink.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
