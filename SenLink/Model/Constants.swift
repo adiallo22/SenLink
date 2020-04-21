@@ -15,5 +15,8 @@ struct Constants {
     static let Search = "Search"
     static let Notifications = "Notifications"
     static let Messages = "Messages"
+    static let signIn = "Sign In"
+    static let SignUP = "Sign Up"
+    static let linkToSignup = "toSignup"
     
 }
