@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
     
@@ -15,6 +16,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var pwdLabel: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    let auth = Auth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,13 @@ class LoginVC: UIViewController {
         if error != nil {
             setError(err: error!)
         } else {
-            transitionTo(here: "")
+            auth.signIn(withEmail: emailLabel.text!, password: pwdLabel.text!) { (result, error) in
+                if error != nil {
+                    self.setError(err: "Wrong user or password")
+                } else {
+                    self.transitionTo(here: "")
+                }
+            }
         }
         
     }
