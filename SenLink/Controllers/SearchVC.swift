@@ -15,7 +15,7 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.Search
+        navigationItem.title = Constants.Titles.Search
         
     }
     

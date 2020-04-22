@@ -15,7 +15,7 @@ class NotificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.Notifications
+        navigationItem.title = Constants.Titles.Notifications
     }
     
 

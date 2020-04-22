@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.SignUP
+        navigationItem.title = Constants.Titles.SignUP
         db = Firestore.firestore()
         errorLabel.alpha = 0
         applyStyle()

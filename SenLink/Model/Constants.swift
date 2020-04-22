@@ -10,13 +10,18 @@ import Foundation
 
 struct Constants {
     
+    enum Segues {
+        static let linkToSignup = "toSignup"
+        static let menuHomeVC = "menuHomeVC"
+    }
     
-    static let Home = "Home"
-    static let Search = "Search"
-    static let Notifications = "Notifications"
-    static let Messages = "Messages"
-    static let signIn = "Sign In"
-    static let SignUP = "Sign Up"
-    static let linkToSignup = "toSignup"
+    enum Titles {
+        static let signIn = "Sign In"
+        static let SignUP = "Sign Up"
+        static let Home = "Home"
+        static let Search = "Search"
+        static let Notifications = "Notifications"
+        static let Messages = "Messages"        
+    }
     
 }

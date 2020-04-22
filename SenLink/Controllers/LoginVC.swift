@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.signIn
+        navigationItem.title = Constants.Titles.signIn
         errorLabel.alpha = 0
         applyStyle()
         
@@ -47,7 +47,7 @@ class LoginVC: UIViewController {
     
     
     @IBAction func signupPressed(_ sender: UIButton) {
-        transitionTo(here: Constants.linkToSignup)
+        transitionTo(here: Constants.Segues.linkToSignup)
     }
     
 

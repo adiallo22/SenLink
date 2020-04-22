@@ -15,7 +15,7 @@ class MessageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = Constants.Messages
+        navigationItem.title = Constants.Titles.Messages
         
     }
 
