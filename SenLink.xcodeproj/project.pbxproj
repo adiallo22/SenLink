@@ -25,6 +25,9 @@
 		C03E56C7244F89B10059E4B5 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C6244F89B10059E4B5 /* Style.swift */; };
 		C03E56CA2450AC590059E4B5 /* MenuHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C92450AC590059E4B5 /* MenuHomeTableViewController.swift */; };
 		C03E56CC2450D6E70059E4B5 /* MenuTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56CB2450D6E70059E4B5 /* MenuTransitioner.swift */; };
+		C03E56D12451FF810059E4B5 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D02451FF810059E4B5 /* ProfileVC.swift */; };
+		C03E56D32451FF970059E4B5 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D22451FF970059E4B5 /* SettingVC.swift */; };
+		C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D42451FFB00059E4B5 /* GroupsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		C03E56C6244F89B10059E4B5 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		C03E56C92450AC590059E4B5 /* MenuHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeTableViewController.swift; sourceTree = "<group>"; };
 		C03E56CB2450D6E70059E4B5 /* MenuTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransitioner.swift; sourceTree = "<group>"; };
+		C03E56D02451FF810059E4B5 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C03E56D22451FF970059E4B5 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		C03E56D42451FFB00059E4B5 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 				C03E56B3244F54CB0059E4B5 /* SearchVC.swift */,
 				C03E56AF244F548B0059E4B5 /* NotificationVC.swift */,
 				C03E56B1244F54A10059E4B5 /* MessageVC.swift */,
+				C03E56D42451FFB00059E4B5 /* GroupsVC.swift */,
+				C03E56D22451FF970059E4B5 /* SettingVC.swift */,
+				C03E56D02451FF810059E4B5 /* ProfileVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,10 +267,13 @@
 			files = (
 				C03E56B4244F54CB0059E4B5 /* SearchVC.swift in Sources */,
 				C03E56B2244F54A10059E4B5 /* MessageVC.swift in Sources */,
+				C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */,
+				C03E56D12451FF810059E4B5 /* ProfileVC.swift in Sources */,
 				C03E56BC244F60700059E4B5 /* LoginVC.swift in Sources */,
 				C03E56BE244F60870059E4B5 /* SignupVC.swift in Sources */,
 				C03E569A244F4E210059E4B5 /* AppDelegate.swift in Sources */,
 				C03E56CC2450D6E70059E4B5 /* MenuTransitioner.swift in Sources */,
+				C03E56D32451FF970059E4B5 /* SettingVC.swift in Sources */,
 				C03E569C244F4E210059E4B5 /* SceneDelegate.swift in Sources */,
 				C03E56B9244F579F0059E4B5 /* Constants.swift in Sources */,
 				C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */,

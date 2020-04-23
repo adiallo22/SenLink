@@ -48,6 +48,54 @@
             </objects>
             <point key="canvasLocation" x="5015.9420289855079" y="-323.4375"/>
         </scene>
+        <!--ProfileVC-->
+        <scene sceneID="OfU-Ll-jNW">
+            <objects>
+                <viewController id="1yR-0h-w4S" customClass="ProfileVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iMo-mU-snZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aMI-ba-c1b"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rez-hW-8Vi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNi-UW-N8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="-2333"/>
+        </scene>
+        <!--GroupsVC-->
+        <scene sceneID="US3-wE-cbf">
+            <objects>
+                <viewController id="4Yy-TH-XJO" customClass="GroupsVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xbL-8g-J8w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EQh-6g-OJL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mja-dV-Tht"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKD-hq-YxT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3342" y="-2333"/>
+        </scene>
+        <!--SettingVC-->
+        <scene sceneID="Ijb-PQ-WJt">
+            <objects>
+                <viewController id="Y3a-Zp-dPj" customClass="SettingVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4bg-VQ-pSn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="2bw-vU-oKh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="q14-Ft-Ru2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y03-QY-bFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4076" y="-2342"/>
+        </scene>
         <!--Menu-->
         <scene sceneID="Lf2-gF-ncF">
             <objects>
@@ -224,6 +272,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Menu" id="J6R-ye-EYj"/>
+                    <connections>
+                        <segue destination="1yR-0h-w4S" kind="show" identifier="toProfile" id="P8e-7N-f8o"/>
+                        <segue destination="4Yy-TH-XJO" kind="show" identifier="toGroups" id="15N-7X-vVY"/>
+                        <segue destination="Y3a-Zp-dPj" kind="show" identifier="toSetting" id="ObS-jn-q62"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJh-Ut-vE5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,7 +332,7 @@
         <!--LoginVC-->
         <scene sceneID="M3T-34-A0C">
             <objects>
-                <viewController id="jcb-Up-mLA" customClass="LoginVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstScreen" id="jcb-Up-mLA" customClass="LoginVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kCd-cA-ECC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,12 +343,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-Lq-u6b">
                                 <rect key="frame" x="20" y="128" width="374" height="260"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV5-CA-xZj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@a.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV5-CA-xZj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E70-ch-dwh">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E70-ch-dwh">
                                         <rect key="frame" x="0.0" y="70" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -474,7 +527,19 @@
                     <view key="view" contentMode="scaleToFill" id="LIm-MD-XCa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xEk-yG-EMP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bfb-Pm-9x6" firstAttribute="bottom" secondItem="xEk-yG-EMP" secondAttribute="bottom" id="Ioz-bx-N3m"/>
+                            <constraint firstItem="xEk-yG-EMP" firstAttribute="leading" secondItem="Bfb-Pm-9x6" secondAttribute="leading" id="eaH-gc-TcC"/>
+                            <constraint firstItem="xEk-yG-EMP" firstAttribute="top" secondItem="Bfb-Pm-9x6" secondAttribute="top" id="gHt-SG-p6B"/>
+                            <constraint firstItem="Bfb-Pm-9x6" firstAttribute="trailing" secondItem="xEk-yG-EMP" secondAttribute="trailing" id="t7N-Of-ily"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bfb-Pm-9x6"/>
                     </view>
                     <navigationItem key="navigationItem" id="R6V-0V-CXe"/>
@@ -625,6 +690,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBC-gi-KYw" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="L8K-pj-IHZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MaV-3L-L3n">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

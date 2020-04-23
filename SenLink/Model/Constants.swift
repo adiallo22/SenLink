@@ -13,6 +13,10 @@ struct Constants {
     enum Segues {
         static let linkToSignup = "toSignup"
         static let menuHomeVC = "menuHomeVC"
+        static let firstScreen = "firstScreen"
+        static let toSetting = "toSetting"
+        static let toProfile = "toProfile"
+        static let toGroups = "toGroups"
     }
     
     enum Titles {
