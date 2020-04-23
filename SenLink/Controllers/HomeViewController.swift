@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     let transtion = MenuTransition()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

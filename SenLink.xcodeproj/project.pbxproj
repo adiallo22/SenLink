@@ -24,7 +24,7 @@
 		C03E56C4244F81790059E4B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C03E56C3244F81790059E4B5 /* GoogleService-Info.plist */; };
 		C03E56C7244F89B10059E4B5 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C6244F89B10059E4B5 /* Style.swift */; };
 		C03E56CA2450AC590059E4B5 /* MenuHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56C92450AC590059E4B5 /* MenuHomeTableViewController.swift */; };
-		C03E56CC2450D6E70059E4B5 /* MenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56CB2450D6E70059E4B5 /* MenuTransition.swift */; };
+		C03E56CC2450D6E70059E4B5 /* MenuTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56CB2450D6E70059E4B5 /* MenuTransitioner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		C03E56C3244F81790059E4B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C03E56C6244F89B10059E4B5 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		C03E56C92450AC590059E4B5 /* MenuHomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeTableViewController.swift; sourceTree = "<group>"; };
-		C03E56CB2450D6E70059E4B5 /* MenuTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransition.swift; sourceTree = "<group>"; };
+		C03E56CB2450D6E70059E4B5 /* MenuTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTransitioner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 				C03E56BD244F60870059E4B5 /* SignupVC.swift */,
 				C03E56C1244F7E820059E4B5 /* mainVC.swift */,
 				C03E56B6244F56E20059E4B5 /* HomeViewController.swift */,
-				C03E56CB2450D6E70059E4B5 /* MenuTransition.swift */,
+				C03E56CB2450D6E70059E4B5 /* MenuTransitioner.swift */,
 				C03E56C92450AC590059E4B5 /* MenuHomeTableViewController.swift */,
 				C03E56B3244F54CB0059E4B5 /* SearchVC.swift */,
 				C03E56AF244F548B0059E4B5 /* NotificationVC.swift */,
@@ -261,7 +261,7 @@
 				C03E56BC244F60700059E4B5 /* LoginVC.swift in Sources */,
 				C03E56BE244F60870059E4B5 /* SignupVC.swift in Sources */,
 				C03E569A244F4E210059E4B5 /* AppDelegate.swift in Sources */,
-				C03E56CC2450D6E70059E4B5 /* MenuTransition.swift in Sources */,
+				C03E56CC2450D6E70059E4B5 /* MenuTransitioner.swift in Sources */,
 				C03E569C244F4E210059E4B5 /* SceneDelegate.swift in Sources */,
 				C03E56B9244F579F0059E4B5 /* Constants.swift in Sources */,
 				C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */,

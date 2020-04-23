@@ -18,6 +18,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var pwdLabel: UITextField!
     @IBOutlet weak var signupBtn: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var locationField: UITextField!
     
     let auth = Auth.auth()
     var db : Firestore?
@@ -41,11 +42,12 @@ class SignupVC: UIViewController {
             let pwd = pwdLabel.text!
             let fname = fnameLabel.text!
             let lname = lnameLabel.text!
+            let location = locationField.text!
             auth.createUser(withEmail: email, password: pwd) { (result, err) in
                 if err != nil {
                     self.setError("Error creating new user")
                 } else {
-                    self.db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)"])
+                    self.db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)", "Location":"\(location)"])
                     self.connectUser()
                 }
             }
@@ -89,6 +91,7 @@ extension SignupVC {
         Style.styleTextField(pwdLabel)
         Style.styleTextField(fnameLabel)
         Style.styleTextField(lnameLabel)
+        Style.styleTextField(locationField)
         Style.styleFilledButton(signupBtn)
     }
     
