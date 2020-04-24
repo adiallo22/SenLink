@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Titles.Home
+        table.delegate = self
+        table.dataSource = self
         
     }
 
@@ -42,4 +44,25 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
         transtion.isPresenting = false
         return transtion
     }
+}
+
+
+//MARK: - data source and delegate
+
+extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        return cell!
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(".")
+    }
+    
 }

@@ -16,10 +16,29 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Titles.Search
+        table.delegate = self
+        table.dataSource = self
         
     }
-    
 
-    
+}
 
+//MARK: - data source and delegate
+
+extension SearchVC : UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        return cell!
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(".")
+    }
+    
 }
