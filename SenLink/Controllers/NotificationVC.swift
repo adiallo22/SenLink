@@ -10,14 +10,14 @@ import UIKit
 
 class NotificationVC: UIViewController {
 
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Titles.Notifications
-        table.delegate = self
-        table.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
 }

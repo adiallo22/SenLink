@@ -294,11 +294,11 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Kc6-dH-qcw">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="164" id="Kc6-dH-qcw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kc6-dH-qcw" id="dEM-OH-zWv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -320,6 +320,11 @@
                                 <action selector="menuBtnPressed:" destination="9UU-0G-fDl" id="NnP-uN-wyb"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="XcL-s6-2AK">
+                            <connections>
+                                <segue destination="57T-0j-vyY" kind="presentation" id="8vL-mr-Y56"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="gQ2-M7-5v3" id="jc8-KE-bYI"/>
@@ -327,7 +332,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSN-uj-aR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3197" y="-994"/>
+            <point key="canvasLocation" x="3195.6521739130435" y="-994.41964285714278"/>
+        </scene>
+        <!--New PostVC-->
+        <scene sceneID="1RU-40-ULu">
+            <objects>
+                <viewController id="57T-0j-vyY" customClass="NewPostVC" customModule="SenLink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hdb-7N-Dlv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-bn-fAB">
+                                <rect key="frame" x="20" y="120" width="374" height="212"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bK-xt-ddq">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="142"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oh7-q6-VAc">
+                                        <rect key="frame" x="0.0" y="162" width="374" height="50"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="buv-EE-Xc4"/>
+                                        </constraints>
+                                        <state key="normal" title="Publish">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pubishClicked:" destination="57T-0j-vyY" eventType="touchUpInside" id="uED-te-4s7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Oh7-q6-VAc" firstAttribute="height" secondItem="7bK-xt-ddq" secondAttribute="height" multiplier="0.352113" id="bLX-AG-Ing"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sQj-w4-HqQ" firstAttribute="trailing" secondItem="K5K-bn-fAB" secondAttribute="trailing" constant="20" id="Bgz-ML-AG9"/>
+                            <constraint firstItem="K5K-bn-fAB" firstAttribute="top" secondItem="sQj-w4-HqQ" secondAttribute="top" constant="120" id="CU5-e0-Wwq"/>
+                            <constraint firstItem="K5K-bn-fAB" firstAttribute="leading" secondItem="sQj-w4-HqQ" secondAttribute="leading" constant="20" id="Hf0-Ik-1I7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sQj-w4-HqQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jAh-Jk-eB9"/>
+                    <connections>
+                        <outlet property="postCaptionLabel" destination="7bK-xt-ddq" id="nxU-uY-Mrc"/>
+                        <outlet property="publishBtn" destination="Oh7-q6-VAc" id="xCx-8Q-egr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsO-Bj-N8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4034.7826086956525" y="-987.05357142857133"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="M3T-34-A0C">
@@ -553,6 +613,9 @@
                         <viewLayoutGuide key="safeArea" id="Bfb-Pm-9x6"/>
                     </view>
                     <navigationItem key="navigationItem" id="R6V-0V-CXe"/>
+                    <connections>
+                        <outlet property="tableView" destination="xEk-yG-EMP" id="r5W-2t-iZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZm-ux-els" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -726,5 +789,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

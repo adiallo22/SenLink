@@ -6,6 +6,10 @@
 //  Copyright © 2020 Abdul Diallo. All rights reserved.
 //
 
+
+
+//have to dismiss the menu bar when user tap outside og menu bar
+
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -21,6 +25,9 @@ class HomeViewController: UIViewController {
         table.dataSource = self
         
     }
+    
+    var postss = ["1", "2", "3"]
+    var posts = [Post]()
 
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         //performSegue(withIdentifier: Constants.openMenu, sender: self)
@@ -52,11 +59,12 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return postss.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell?.textLabel?.text = postss[indexPath.row]
         return cell!
     }
     

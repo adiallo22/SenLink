@@ -29,6 +29,7 @@
 		C03E56D32451FF970059E4B5 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D22451FF970059E4B5 /* SettingVC.swift */; };
 		C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D42451FFB00059E4B5 /* GroupsVC.swift */; };
 		C03E56E124534AC20059E4B5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56E024534AC20059E4B5 /* Post.swift */; };
+		C03E56E424537F530059E4B5 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56E324537F530059E4B5 /* NewPostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		C03E56D22451FF970059E4B5 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		C03E56D42451FFB00059E4B5 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		C03E56E024534AC20059E4B5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C03E56E324537F530059E4B5 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				C03E56B1244F54A10059E4B5 /* MessageVC.swift */,
 				C03E56D42451FFB00059E4B5 /* GroupsVC.swift */,
 				C03E56D22451FF970059E4B5 /* SettingVC.swift */,
+				C03E56E324537F530059E4B5 /* NewPostVC.swift */,
 				C03E56D02451FF810059E4B5 /* ProfileVC.swift */,
 			);
 			path = Controllers;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03E56B4244F54CB0059E4B5 /* SearchVC.swift in Sources */,
+				C03E56E424537F530059E4B5 /* NewPostVC.swift in Sources */,
 				C03E56B2244F54A10059E4B5 /* MessageVC.swift in Sources */,
 				C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */,
 				C03E56D12451FF810059E4B5 /* ProfileVC.swift in Sources */,
