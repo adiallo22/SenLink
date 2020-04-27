@@ -48,8 +48,7 @@ class SignupVC: UIViewController {
                     self.setError("Error creating new user")
                 } else {
                     self.db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)", "Location":"\(location)"])
-                    self.connectUser()
-                }
+                    self.connectUser()              }
             }
         }
     }

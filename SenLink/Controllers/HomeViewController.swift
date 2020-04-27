@@ -11,12 +11,17 @@
 //have to dismiss the menu bar when user tap outside og menu bar
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
+    var postss = ["1", "2", "3"]
+    var posts = [Post]()
+    
     let transtion = MenuTransition()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +29,10 @@ class HomeViewController: UIViewController {
         table.rowHeight = 164.0
         table.delegate = self
         table.dataSource = self
-        
+//        Database.database().reference().child("posts").observe(.value) { (snapshot) in
+//            print(snapshot)
+//        }
     }
-    
-    var postss = ["1", "2", "3"]
-    var posts = [Post]()
 
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         //performSegue(withIdentifier: Constants.openMenu, sender: self)

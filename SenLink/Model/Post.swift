@@ -22,18 +22,23 @@ class Post {
     var followBtn : UIButton?
     var time : Int?
     
-    var db : Firestore!
+    var db : DatabaseReference!
     
     init(caption : String) {
-        db = Firestore.firestore()
+        db = Database.database().reference()
         self.caption = caption
         self.likes = 0
         self.comments = 0
         self.shares = 0
     }
     
+//    init(snapshot : DataSnapshot) {
+//       // <#statements#>
+//    }
+    
     func save() {
-        db.collection("posts").addDocument(data: dictionnary())
+        db.child("posts").childByAutoId().setValue(dictionnary())
+        //db.collection("posts").addDocument(data: dictionnary())
     }
     
     func dictionnary() -> [String:Any] {
@@ -41,7 +46,8 @@ class Post {
             "caption":"\(caption!)",
             "likes":"\(likes!)",
             "comments":"\(comments!)",
-            "shares":"\(shares!)"
+            "shares":"\(shares!)",
+            "username":"\(String(describing: Auth.auth().currentUser!.email!))"
         ]
     }
     

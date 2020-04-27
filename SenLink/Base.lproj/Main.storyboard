@@ -408,6 +408,15 @@
                                                 <constraint firstItem="VvU-wM-3WP" firstAttribute="top" secondItem="dEM-OH-zWv" secondAttribute="top" constant="12" id="zhc-gH-U2V"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="XXy-CX-eid" id="aID-Kl-DZD"/>
+                                            <outlet property="commentsCount" destination="nCt-CS-8nC" id="QFJ-kl-a90"/>
+                                            <outlet property="likesCount" destination="WUO-Ow-xKd" id="GMD-i5-ygH"/>
+                                            <outlet property="profileImg" destination="MSn-Pc-JEY" id="7C5-Ma-grg"/>
+                                            <outlet property="sharesCount" destination="k7n-Gn-qqX" id="yFk-ge-ujy"/>
+                                            <outlet property="time" destination="VvU-wM-3WP" id="Psz-PY-N7L"/>
+                                            <outlet property="username" destination="OIT-YL-G7y" id="9Wq-tN-VOE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
