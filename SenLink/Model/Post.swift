@@ -33,7 +33,7 @@ class Post {
     }
     
     func save() {
-        db.collection("posts").document("\(Auth.auth().currentUser!.uid)").setData(dictionnary())
+        db.collection("posts").addDocument(data: dictionnary())
     }
     
     func dictionnary() -> [String:Any] {

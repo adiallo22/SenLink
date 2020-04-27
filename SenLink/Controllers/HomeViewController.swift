@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Titles.Home
+        table.rowHeight = 164.0
         table.delegate = self
         table.dataSource = self
         
@@ -63,9 +64,9 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = postss[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! HomePostCellsTableViewCell
+//        cell?.textLabel?.text = postss[indexPath.row]
+        return cell
     }
     
     

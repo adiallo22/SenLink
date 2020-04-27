@@ -30,6 +30,7 @@
 		C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56D42451FFB00059E4B5 /* GroupsVC.swift */; };
 		C03E56E124534AC20059E4B5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56E024534AC20059E4B5 /* Post.swift */; };
 		C03E56E424537F530059E4B5 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56E324537F530059E4B5 /* NewPostVC.swift */; };
+		C041704C24573BBC00C41046 /* HomePostCellsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C03E56D42451FFB00059E4B5 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		C03E56E024534AC20059E4B5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C03E56E324537F530059E4B5 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
+		C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCellsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		C03E56E224534E5A0059E4B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				C03E56B9244F579F0059E4B5 /* Constants.swift in Sources */,
 				C03E56C2244F7E820059E4B5 /* mainVC.swift in Sources */,
 				C03E56B0244F548B0059E4B5 /* NotificationVC.swift in Sources */,
+				C041704C24573BBC00C41046 /* HomePostCellsTableViewCell.swift in Sources */,
 				C03E56B7244F56E20059E4B5 /* HomeViewController.swift in Sources */,
 				C03E56C7244F89B10059E4B5 /* Style.swift in Sources */,
 				C03E56E124534AC20059E4B5 /* Post.swift in Sources */,
