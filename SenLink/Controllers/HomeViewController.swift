@@ -17,10 +17,13 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
     
-    var postss = ["1", "2", "3"]
     var posts = [Post]()
     
     let transtion = MenuTransition()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +32,13 @@ class HomeViewController: UIViewController {
         table.rowHeight = 164.0
         table.delegate = self
         table.dataSource = self
-//        Database.database().reference().child("posts").observe(.value) { (snapshot) in
-//            print(snapshot)
-//        }
+        fetchPosts(from: Database.database().reference().child("posts"))
+
     }
 
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         //performSegue(withIdentifier: Constants.openMenu, sender: self)
-        let menuHomeVC = storyboard?.instantiateViewController(identifier: "menuHomeVC")
+        let menuHomeVC = storyboard?.instantiateViewController(identifier: Constants.Segues.menuHomeVC)
         menuHomeVC?.modalPresentationStyle = .overCurrentContext
         menuHomeVC?.transitioningDelegate = self
         present(menuHomeVC!, animated: true)
@@ -64,18 +66,39 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postss.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! HomePostCellsTableViewCell
-//        cell?.textLabel?.text = postss[indexPath.row]
+        let post = posts[indexPath.row]
+        cell.post = post
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(".")
+        print(posts[indexPath.row].caption!)
+    }
+    
+}
+
+//MARK: - fetch posts
+
+extension HomeViewController {
+    
+    func fetchPosts(from db: DatabaseReference) {
+        
+        db.observe(.value) { (snapshot) in
+            for child in snapshot.children {
+                let chilSnapPost = child as! DataSnapshot
+                //print("childsnapost \(chilSnapPost)")
+                let post = Post(snapshot: chilSnapPost)
+                self.posts.insert(post, at: 0)
+            }
+            self.table.reloadData()
+        }
+        
     }
     
 }

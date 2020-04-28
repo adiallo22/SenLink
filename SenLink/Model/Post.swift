@@ -32,9 +32,16 @@ class Post {
         self.shares = 0
     }
     
-//    init(snapshot : DataSnapshot) {
-//       // <#statements#>
-//    }
+    init(snapshot : DataSnapshot) {
+        db = snapshot.ref
+        if let value = snapshot.value as? [String : Any] {
+            caption = value["caption"] as? String
+            username = value["username"] as? String
+            comments = value["comments"] as? Int
+            likes = value["likes"] as? Int
+            shares = value["shares"] as? Int
+        }
+    }
     
     func save() {
         db.child("posts").childByAutoId().setValue(dictionnary())
@@ -43,7 +50,7 @@ class Post {
     
     func dictionnary() -> [String:Any] {
         return [
-            "caption":"\(caption!)",
+            "caption":"\(String(describing: caption!))",
             "likes":"\(likes!)",
             "comments":"\(comments!)",
             "shares":"\(shares!)",

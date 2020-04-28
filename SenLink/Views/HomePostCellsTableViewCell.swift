@@ -19,7 +19,16 @@ class HomePostCellsTableViewCell: UITableViewCell {
     @IBOutlet weak var commentsCount: UILabel!
     @IBOutlet weak var sharesCount: UILabel!
     
-    //var post = Post(caption: <#T##String#>)
+    var post : Post! {
+        didSet {
+            username.text = post.username!
+            caption.text = post.caption!
+            likesCount.text = "\(post.likes)"
+            commentsCount.text = "\(post.comments)"
+            sharesCount.text = "\(post.shares)"
+            
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
