@@ -32,6 +32,7 @@
 		C03E56E424537F530059E4B5 /* NewPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E56E324537F530059E4B5 /* NewPostVC.swift */; };
 		C041704C24573BBC00C41046 /* HomePostCellsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */; };
 		C041704E2458857C00C41046 /* to-do in Resources */ = {isa = PBXBuildFile; fileRef = C041704D2458857C00C41046 /* to-do */; };
+		C04170502458ED0F00C41046 /* DirectMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C041704F2458ED0F00C41046 /* DirectMessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		C03E56E324537F530059E4B5 /* NewPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostVC.swift; sourceTree = "<group>"; };
 		C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCellsTableViewCell.swift; sourceTree = "<group>"; };
 		C041704D2458857C00C41046 /* to-do */ = {isa = PBXFileReference; lastKnownFileType = text; path = "to-do"; sourceTree = "<group>"; };
+		C041704F2458ED0F00C41046 /* DirectMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */,
+				C041704F2458ED0F00C41046 /* DirectMessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				C03E56B4244F54CB0059E4B5 /* SearchVC.swift in Sources */,
 				C03E56E424537F530059E4B5 /* NewPostVC.swift in Sources */,
+				C04170502458ED0F00C41046 /* DirectMessageCell.swift in Sources */,
 				C03E56B2244F54A10059E4B5 /* MessageVC.swift in Sources */,
 				C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */,
 				C03E56D12451FF810059E4B5 /* ProfileVC.swift in Sources */,

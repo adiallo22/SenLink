@@ -88,7 +88,6 @@ extension HomeViewController {
         db.observe(.value) { (snapshot) in
             for child in snapshot.children {
                 let childSnapPost = child as! DataSnapshot
-                print("childsnapost \(childSnapPost)")
                 let post = Post(snapshot: childSnapPost)
                 self.posts.insert(post, at: 0)
             }

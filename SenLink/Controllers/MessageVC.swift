@@ -32,8 +32,8 @@ extension MessageVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! DirectMessageCell
+        return cell
     }
     
     
