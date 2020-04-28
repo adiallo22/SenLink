@@ -20,7 +20,7 @@ class Post {
     var caption : String?
     var postImg : UIImage?
     var followBtn : UIButton?
-    var time : Int?
+    var time : String?
     
     var db : DatabaseReference!
     
@@ -40,6 +40,7 @@ class Post {
             comments = value["comments"] as? Int
             likes = value["likes"] as? Int
             shares = value["shares"] as? Int
+            time = value["time"] as? String
         }
     }
     
@@ -51,10 +52,11 @@ class Post {
     func dictionnary() -> [String:Any] {
         return [
             "caption":"\(String(describing: caption!))",
-            "likes":"\(likes!)",
-            "comments":"\(comments!)",
-            "shares":"\(shares!)",
-            "username":"\(String(describing: Auth.auth().currentUser!.email!))"
+            "likes" : likes!,
+            "comments" :comments!,
+            "shares" : shares!,
+            "username" : "\(String(describing: Auth.auth().currentUser!.email!))",
+            "time" : "\(String(describing: Date()))"
         ]
     }
     

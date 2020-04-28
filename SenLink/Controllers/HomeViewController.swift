@@ -6,10 +6,6 @@
 //  Copyright © 2020 Abdul Diallo. All rights reserved.
 //
 
-
-
-//have to dismiss the menu bar when user tap outside og menu bar
-
 import UIKit
 import Firebase
 
@@ -91,9 +87,9 @@ extension HomeViewController {
         
         db.observe(.value) { (snapshot) in
             for child in snapshot.children {
-                let chilSnapPost = child as! DataSnapshot
-                //print("childsnapost \(chilSnapPost)")
-                let post = Post(snapshot: chilSnapPost)
+                let childSnapPost = child as! DataSnapshot
+                print("childsnapost \(childSnapPost)")
+                let post = Post(snapshot: childSnapPost)
                 self.posts.insert(post, at: 0)
             }
             self.table.reloadData()

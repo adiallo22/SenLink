@@ -1,0 +1,4 @@
+1. replace the likes, comments, shares images with uibuttons
+2. make sure the labels display the number of likes, shares and comments
+3. add username and profile section in sign up form
+4. upload profile in firestore

@@ -21,12 +21,12 @@ class HomePostCellsTableViewCell: UITableViewCell {
     
     var post : Post! {
         didSet {
-            username.text = post.username!
-            caption.text = post.caption!
-            likesCount.text = "\(post.likes)"
-            commentsCount.text = "\(post.comments)"
-            sharesCount.text = "\(post.shares)"
-            
+            username.text = post.username
+            caption.text = post.caption
+            likesCount.text = "\(String(describing: post.likes!))"
+            commentsCount.text = "\(String(describing: post.comments!))"
+            sharesCount.text = "\(String(describing: post.shares!))"
+            //time.text = "\(post.time)"
         }
     }
     
