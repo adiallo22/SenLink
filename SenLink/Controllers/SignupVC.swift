@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
+import Firebase
+import FirebaseStorage
 
 class SignupVC: UIViewController {
 
@@ -24,6 +24,7 @@ class SignupVC: UIViewController {
     
     let auth = Auth.auth()
     var db : Firestore?
+    var storage : StorageReference?
     var imgPicker : UIImagePickerController?
     
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class SignupVC: UIViewController {
 
         navigationItem.title = Constants.Titles.SignUP
         db = Firestore.firestore()
+        storage = Storage.storage(url: "gs://senlink-6d966.appspot.com").reference().child("users_profile")
         imgPicker = UIImagePickerController()
         imgPicker?.delegate = self
         errorLabel.alpha = 0
@@ -57,7 +59,8 @@ class SignupVC: UIViewController {
                 if err != nil {
                     self.setError("Error creating new user")
                 } else {
-                    self.db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)", "Location":"\(location)"])
+                    self.uploadDataToFirestore(fname: fname, lname: lname, email: email, location: location)
+                    self.uploadProfileImageToStorage()
                     self.connectUser()              }
             }
         }
@@ -65,7 +68,9 @@ class SignupVC: UIViewController {
 
 }
 
-//MARK: - <#section heading#>
+
+//MARK: - error handling and connexion
+
 
 extension SignupVC {
     
@@ -95,6 +100,10 @@ extension SignupVC {
         view.endEditing(true)
     }
     
+    
+//MARK: - Styling
+    
+    
     //apply style to buttons and textfield
     func applyStyle() {
         Style.styleTextField(emailLabel)
@@ -108,6 +117,7 @@ extension SignupVC {
         profileImgCircle()
     }
     
+    //style the profile image
     func profileImgCircle() {
         //round the borders
         self.userImg.layer.cornerRadius = 35
@@ -117,9 +127,34 @@ extension SignupVC {
         self.userImg.layer.borderColor = CGColor(srgbRed: 0, green: 0, blue: 0, alpha: 1)
     }
     
+    
+//MARK: - Store Data
+    
+    
+    //save image to storage
+    func uploadProfileImageToStorage() {
+        if let imageData = userImg.image!.pngData() {
+            storage?.child("\(String(describing: auth.currentUser!.uid)).png").putData(imageData, metadata: nil, completion: { (data, error) in
+                if error != nil {
+                    print("profile image was uploaded successfully")
+                } else {
+                    self.setError("Error uploading image")
+                    print("error uploading image")
+                }
+            })
+        }
+    }
+    
+    //save data to forestore
+    func uploadDataToFirestore(fname: String, lname: String, email: String, location: String) {
+        db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)", "Location":"\(location)"])
+    }
+    
 }
 
-//MARK: - image picker
+
+//MARK: - image picker handling
+
 
 extension SignupVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
