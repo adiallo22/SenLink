@@ -12,6 +12,8 @@ import FirebaseFirestore
 
 class SignupVC: UIViewController {
 
+    @IBOutlet weak var btnUpload: UIButton!
+    @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var fnameLabel: UITextField!
     @IBOutlet weak var lnameLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
@@ -22,17 +24,25 @@ class SignupVC: UIViewController {
     
     let auth = Auth.auth()
     var db : Firestore?
+    var imgPicker : UIImagePickerController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = Constants.Titles.SignUP
         db = Firestore.firestore()
+        imgPicker = UIImagePickerController()
+        imgPicker?.delegate = self
         errorLabel.alpha = 0
         applyStyle()
         
     }
-        
+    
+    
+    @IBAction func uploadBtnPressed(_ sender: Any) {
+        pickImage()
+    }
+    
     @IBAction func signupPressed(_ sender: UIButton) {
         let error = checkError()
         if error != nil {
@@ -52,9 +62,10 @@ class SignupVC: UIViewController {
             }
         }
     }
-    
 
 }
+
+//MARK: - <#section heading#>
 
 extension SignupVC {
     
@@ -92,6 +103,37 @@ extension SignupVC {
         Style.styleTextField(lnameLabel)
         Style.styleTextField(locationField)
         Style.styleFilledButton(signupBtn)
+        Style.styleHollowButton(btnUpload)
+        btnUpload.layer.cornerRadius = 15
+        profileImgCircle()
+    }
+    
+    func profileImgCircle() {
+        //round the borders
+        self.userImg.layer.cornerRadius = 35
+        self.userImg.layer.masksToBounds = true
+        //set border width and color
+        self.userImg.layer.borderWidth = 2
+        self.userImg.layer.borderColor = CGColor(srgbRed: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+}
+
+//MARK: - image picker
+
+extension SignupVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[.editedImage] as? UIImage {
+            userImg.image = img
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func pickImage() {
+        imgPicker?.allowsEditing = true
+        imgPicker?.sourceType = .photoLibrary
+        present(imgPicker!, animated: true, completion: nil)
     }
     
 }
