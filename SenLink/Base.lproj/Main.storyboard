@@ -55,14 +55,56 @@
                     <view key="view" contentMode="scaleToFill" id="iMo-mU-snZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yHV-Fc-90G">
+                                <rect key="frame" x="39" y="96" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Ko8-Kl-e2p"/>
+                                    <constraint firstAttribute="height" constant="90" id="Li6-3t-QxT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-j6-c5c">
+                                <rect key="frame" x="167" y="96" width="210" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="210" id="ghG-B6-HpJ"/>
+                                    <constraint firstAttribute="height" constant="43" id="gnz-Me-546"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykv-Ii-af8">
+                                <rect key="frame" x="167" y="147" width="210" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Dib-L6-lHv"/>
+                                    <constraint firstAttribute="width" constant="210" id="OcX-ou-Al5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Msh-j6-c5c" firstAttribute="top" secondItem="aMI-ba-c1b" secondAttribute="top" constant="96" id="3fa-Wb-UWk"/>
+                            <constraint firstItem="Ykv-Ii-af8" firstAttribute="top" secondItem="Msh-j6-c5c" secondAttribute="bottom" constant="8" id="4Ny-gz-CH9"/>
+                            <constraint firstItem="Msh-j6-c5c" firstAttribute="leading" secondItem="yHV-Fc-90G" secondAttribute="trailing" constant="38" id="bnH-si-GXG"/>
+                            <constraint firstItem="Ykv-Ii-af8" firstAttribute="leading" secondItem="yHV-Fc-90G" secondAttribute="trailing" constant="38" id="iWh-mc-27b"/>
+                            <constraint firstItem="yHV-Fc-90G" firstAttribute="top" secondItem="aMI-ba-c1b" secondAttribute="top" constant="96" id="icb-pY-own"/>
+                            <constraint firstItem="yHV-Fc-90G" firstAttribute="leading" secondItem="aMI-ba-c1b" secondAttribute="leading" constant="39" id="wN9-r1-31P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aMI-ba-c1b"/>
                     </view>
                     <navigationItem key="navigationItem" id="rez-hW-8Vi"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="Ykv-Ii-af8" id="8ON-EP-0N6"/>
+                        <outlet property="profileImg" destination="yHV-Fc-90G" id="aXp-Zz-fFH"/>
+                        <outlet property="usernameLabel" destination="Msh-j6-c5c" id="2Hb-z3-KbE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNi-UW-N8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2515" y="-2333"/>
+            <point key="canvasLocation" x="2514.4927536231885" y="-2333.0357142857142"/>
         </scene>
         <!--GroupsVC-->
         <scene sceneID="US3-wE-cbf">
@@ -525,7 +567,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XwV-Lq-u6b">
                                 <rect key="frame" x="20" y="128" width="374" height="260"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@a.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV5-CA-xZj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abduldiallo196@gmail.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV5-CA-xZj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>

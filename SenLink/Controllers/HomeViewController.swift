@@ -90,10 +90,10 @@ extension HomeViewController {
                 let childSnapPost = child as! DataSnapshot
                 let post = Post(snapshot: childSnapPost)
                 self.posts.insert(post, at: 0)
+                self.table.reloadData()
             }
-            self.table.reloadData()
+            //self.table.reloadData()
         }
-        
     }
     
 }

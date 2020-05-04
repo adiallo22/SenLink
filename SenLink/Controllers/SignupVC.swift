@@ -62,7 +62,8 @@ class SignupVC: UIViewController {
                 } else {
                     self.uploadDataToFirestore(fname: fname, lname: lname, email: email, location: location)
                     self.uploadProfileImageToStorage()
-                    self.connectUser()              }
+                    self.connectUser()
+                }
             }
         }
     }
@@ -134,16 +135,16 @@ extension SignupVC {
         if let imageData = userImg.image!.pngData() {
             storage?.child("\(String(describing: auth.currentUser!.uid)).png").putData(imageData, metadata: nil, completion: { (data, error) in
                 if error != nil {
-                    print("profile image was uploaded successfully")
-                } else {
+                    print("error saving profile image")
                     self.setError("Error uploading image")
-                    print("error uploading image")
+                } else {
+                    print("successfully uploaded profile image")
                 }
             })
         }
     }
     
-    //save data to forestore
+    //save data to firestore
     func uploadDataToFirestore(fname: String, lname: String, email: String, location: String) {
         db?.collection("users").document("\(self.auth.currentUser!.uid)").setData(["First name":"\(fname)", "Last name": "\(lname)", "Email":"\(email)", "Location":"\(location)"])
     }
