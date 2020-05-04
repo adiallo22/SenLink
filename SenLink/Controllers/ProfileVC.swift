@@ -14,6 +14,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var seperatorLine: UIView!
     
     var storage : StorageReference!
     var profilePath : StorageReference?
@@ -24,6 +25,7 @@ class ProfileVC: UIViewController {
         
         setReference()
         applyStyleOnProfileImage()
+        drawTheSeparatorLine()
         downloadProfileImage()
         downloadUserData()
         
@@ -43,6 +45,10 @@ extension ProfileVC {
         profileImg.layer.masksToBounds = true
     }
     
+    func drawTheSeparatorLine() {
+        seperatorLine.backgroundColor = UIColor(displayP3Red: 1, green: 0, blue: 1, alpha: 1)
+    }
+    
 }
 
 
@@ -51,18 +57,19 @@ extension ProfileVC {
 extension ProfileVC {
     
     func downloadProfileImage() {
-        profilePath?.downloadURL(completion: { (url, error) in
-            if error != nil {
-                print("\(error!)")
-            } else {
-                if let url = url {
-                    DispatchQueue.main.async {
-                        let data = UIImage(data: url.absoluteURL.dataRepresentation)
-                        self.profileImg.image = data
-                    }
-                }
+        profilePath?.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            DispatchQueue.main.async {
+                self.profileImg.image = .none
             }
-        })
+            print(error)
+          } else {
+            let image = UIImage(data: data!)
+            DispatchQueue.main.async {
+                self.profileImg.image = image
+            }
+          }
+        }
     }
     
     func downloadUserData() {
