@@ -70,7 +70,12 @@ extension ProfileVC {
             if error != nil {
                 print("error downloading user name and location")
             } else {
-                print(doc?.data()) 
+                if let doc = doc {
+                    DispatchQueue.main.async {
+                        self.usernameLabel.text = "\(doc.get("First name")!) \(doc.get("Last name")!)"
+                        self.locationLabel.text = "📍 \(doc.get("Location")!)"
+                    }
+                }
             }
         }
     }
