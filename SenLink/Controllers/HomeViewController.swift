@@ -20,11 +20,12 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        styleNewPostButton(with: newPostButton)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newPostButton.setImage(UIImage(named: "plusButton.png"), for: .normal)
+        
         navigationItem.title = Constants.Titles.Home
         table.rowHeight = 164.0
         table.delegate = self
@@ -33,12 +34,32 @@ class HomeViewController: UIViewController {
 
     }
     
+    @IBAction func newPostPressed(_ sender: UIButton) {
+        var newText : UITextField?
+        let alert = UIAlertController(title: "What's hapening?", message: "", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Write your post here..."
+            newText = textfield
+        }
+        let createThePost = UIAlertAction(title: "Publish", style: .default) { (self) in
+            if let postString = newText?.text {
+                let post = Post(caption: "\(postString)")
+                post.save()
+            }
+        }
+        alert.addAction(createThePost)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
         showMenu()
     }
 }
 
+
 //MARK: - menu presentation delegate
+
 
 extension HomeViewController : UIViewControllerTransitioningDelegate {
     
@@ -63,7 +84,9 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
 }
 
 
+
 //MARK: - data source and delegate
+
 
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
@@ -85,7 +108,9 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     
 }
 
+
 //MARK: - fetch posts
+
 
 extension HomeViewController {
     
@@ -99,6 +124,22 @@ extension HomeViewController {
                 self.table.reloadData()
             }
             //self.table.reloadData()
+        }
+    }
+    
+}
+
+
+//MARK: - styling
+
+
+extension HomeViewController {
+    
+    func styleNewPostButton(with : UIButton) {
+        if let plusButton = UIImage(named: "plusButton.png") {
+            with.setImage(plusButton, for: .normal)
+            with.layer.cornerRadius = with.frame.height / 2
+            with.layer.masksToBounds = true
         }
     }
     
