@@ -28,4 +28,6 @@ struct Constants {
         static let Messages = "Messages"        
     }
     
+    static let firestoreReference = "gs://senlink-6d966.appspot.com"
+    
 }

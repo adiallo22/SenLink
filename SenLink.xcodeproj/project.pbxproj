@@ -33,6 +33,7 @@
 		C041704C24573BBC00C41046 /* HomePostCellsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */; };
 		C041704E2458857C00C41046 /* to-do in Resources */ = {isa = PBXBuildFile; fileRef = C041704D2458857C00C41046 /* to-do */; };
 		C04170502458ED0F00C41046 /* DirectMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C041704F2458ED0F00C41046 /* DirectMessageCell.swift */; };
+		C0BB982624608B74005FF444 /* DirectMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BB982524608B74005FF444 /* DirectMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		C041704B24573BBC00C41046 /* HomePostCellsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCellsTableViewCell.swift; sourceTree = "<group>"; };
 		C041704D2458857C00C41046 /* to-do */ = {isa = PBXFileReference; lastKnownFileType = text; path = "to-do"; sourceTree = "<group>"; };
 		C041704F2458ED0F00C41046 /* DirectMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageCell.swift; sourceTree = "<group>"; };
+		C0BB982524608B74005FF444 /* DirectMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +148,8 @@
 				C03E56B1244F54A10059E4B5 /* MessageVC.swift */,
 				C03E56D42451FFB00059E4B5 /* GroupsVC.swift */,
 				C03E56D22451FF970059E4B5 /* SettingVC.swift */,
-				C03E56E324537F530059E4B5 /* NewPostVC.swift */,
 				C03E56D02451FF810059E4B5 /* ProfileVC.swift */,
+				C03E56E324537F530059E4B5 /* NewPostVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 				C03E56B8244F579F0059E4B5 /* Constants.swift */,
 				C03E56C6244F89B10059E4B5 /* Style.swift */,
 				C03E56E024534AC20059E4B5 /* Post.swift */,
+				C0BB982524608B74005FF444 /* DirectMessage.swift */,
 				C041704D2458857C00C41046 /* to-do */,
 			);
 			path = Model;
@@ -295,6 +298,7 @@
 				C03E56B2244F54A10059E4B5 /* MessageVC.swift in Sources */,
 				C03E56D52451FFB00059E4B5 /* GroupsVC.swift in Sources */,
 				C03E56D12451FF810059E4B5 /* ProfileVC.swift in Sources */,
+				C0BB982624608B74005FF444 /* DirectMessage.swift in Sources */,
 				C03E56BC244F60700059E4B5 /* LoginVC.swift in Sources */,
 				C03E56BE244F60870059E4B5 /* SignupVC.swift in Sources */,
 				C03E569A244F4E210059E4B5 /* AppDelegate.swift in Sources */,

@@ -33,7 +33,7 @@ class SignupVC: UIViewController {
 
         navigationItem.title = Constants.Titles.SignUP
         db = Firestore.firestore()
-        storage = Storage.storage(url: "gs://senlink-6d966.appspot.com").reference().child("users_profile")
+        storage = Storage.storage(url: Constants.firestoreReference).reference().child("users_profile")
         imgPicker = UIImagePickerController()
         imgPicker?.delegate = self
         errorLabel.alpha = 0
@@ -126,10 +126,12 @@ extension SignupVC {
         self.userImg.layer.borderColor = CGColor(srgbRed: 0, green: 0, blue: 0, alpha: 1)
     }
     
-    
+}
 //MARK: - Store Data
     
     
+extension SignupVC {
+        
     //save image to storage
     func uploadProfileImageToStorage() {
         if let imageData = userImg.image!.pngData() {
@@ -150,6 +152,7 @@ extension SignupVC {
     }
     
 }
+    
 
 
 //MARK: - image picker handling

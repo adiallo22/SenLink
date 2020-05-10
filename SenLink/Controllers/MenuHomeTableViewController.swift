@@ -45,13 +45,13 @@ class MenuHomeTableViewController: UITableViewController {
                   print ("Error signing out: %@", signOutError)
                 }
             }
-            logOutUser()
+            backToLoginScreen()
         } else {
             performSegue(withIdentifier: here, sender: self)
         }
     }
     
-    func logOutUser() {
+    func backToLoginScreen() {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: Constants.Segues.firstScreen) as! LoginVC
         UIApplication.shared.keyWindow?.rootViewController = viewController

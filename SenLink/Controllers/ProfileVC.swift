@@ -23,7 +23,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setReference()
+        setAllReferences()
         applyStyleOnProfileImage()
         drawTheSeparatorLine()
         downloadProfileImage()
@@ -87,7 +87,7 @@ extension ProfileVC {
         }
     }
     
-    func setReference() {
+    func setAllReferences() {
         storage = Storage.storage().reference(forURL: "gs://senlink-6d966.appspot.com")
         profilePath = storage.child("users_profile/\(Auth.auth().currentUser!.uid).png")
         firestoreDB = Firestore.firestore()

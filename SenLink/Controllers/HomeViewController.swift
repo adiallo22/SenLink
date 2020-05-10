@@ -12,6 +12,7 @@ import Firebase
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var newPostButton: UIButton!
     
     var posts = [Post]()
     
@@ -23,7 +24,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        newPostButton.setImage(UIImage(named: "plusButton.png"), for: .normal)
         navigationItem.title = Constants.Titles.Home
         table.rowHeight = 164.0
         table.delegate = self
@@ -31,13 +32,9 @@ class HomeViewController: UIViewController {
         fetchPosts(from: Database.database().reference().child("posts"))
 
     }
-
+    
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
-        //performSegue(withIdentifier: Constants.openMenu, sender: self)
-        let menuHomeVC = storyboard?.instantiateViewController(identifier: Constants.Segues.menuHomeVC)
-        menuHomeVC?.modalPresentationStyle = .overCurrentContext
-        menuHomeVC?.transitioningDelegate = self
-        present(menuHomeVC!, animated: true)
+        showMenu()
     }
 }
 
@@ -54,6 +51,15 @@ extension HomeViewController : UIViewControllerTransitioningDelegate {
         transtion.isPresenting = false
         return transtion
     }
+    
+    fileprivate func showMenu() {
+        //performSegue(withIdentifier: Constants.openMenu, sender: self)
+        let menuHomeVC = storyboard?.instantiateViewController(identifier: Constants.Segues.menuHomeVC)
+        menuHomeVC?.modalPresentationStyle = .overCurrentContext
+        menuHomeVC?.transitioningDelegate = self
+        present(menuHomeVC!, animated: true)
+    }
+    
 }
 
 

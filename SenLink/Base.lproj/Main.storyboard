@@ -491,6 +491,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="17Z-Ja-tkl">
+                                <rect key="frame" x="341" y="767" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -514,6 +519,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="newPostButton" destination="17Z-Ja-tkl" id="uCS-aT-Aca"/>
                         <outlet property="table" destination="gQ2-M7-5v3" id="jc8-KE-bYI"/>
                     </connections>
                 </viewController>

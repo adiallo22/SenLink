@@ -34,7 +34,7 @@ class NewPostVC: UIViewController {
 
 }
 
-//MARK: - delegate
+//MARK: - delegate and styling
 
 extension NewPostVC : UITextViewDelegate {
     
