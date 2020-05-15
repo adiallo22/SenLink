@@ -18,6 +18,13 @@ class HomePostCellsTableViewCell: UITableViewCell {
     @IBOutlet weak var likesCount: UILabel!
     @IBOutlet weak var commentsCount: UILabel!
     @IBOutlet weak var sharesCount: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    var lCount : Int = 0
+    var cCount : Int = 0
+    var sCount : Int = 0
     
     var post : Post! {
         didSet {
@@ -34,11 +41,34 @@ class HomePostCellsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBAction func likePressed(_ sender: UIButton) {
+        lCount += 1
+        print(lCount)
+    }
+    
+    @IBAction func commmentPressed(_ sender: UIButton) {
+        cCount += 1
+        print(cCount)
+    }
+    
+    @IBAction func sharePressed(_ sender: UIButton) {
+        sCount += 1
+        print(sCount)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        setButton(button: likeButton, "like")
+        setButton(button: commentButton, "comment")
+        setButton(button: shareButton, "share")
+    }
+    
+    func setButton(button: UIButton, _ name: String) {
+        button.setImage(UIImage(named: "\(name)"), for: .normal)
+        button.setTitle("", for: .normal)
     }
 
 }
