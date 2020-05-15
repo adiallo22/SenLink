@@ -35,21 +35,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newPostPressed(_ sender: UIButton) {
-        var newText : UITextField?
-        let alert = UIAlertController(title: "What's hapening?", message: "", preferredStyle: .alert)
-        alert.addTextField { (textfield) in
-            textfield.placeholder = "Write your post here..."
-            newText = textfield
-        }
-        let createThePost = UIAlertAction(title: "Publish", style: .default) { (self) in
-            if let postString = newText?.text {
-                let post = Post(caption: "\(postString)")
-                post.save()
-            }
-        }
-        alert.addAction(createThePost)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        present(alert, animated: true, completion: nil)
+        //makeANewPostWithAlert()
+        performSegue(withIdentifier: Constants.Segues.toNewPost, sender: self)
     }
     
     @IBAction func menuBtnPressed(_ sender: UIBarButtonItem) {
@@ -109,11 +96,12 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
 }
 
 
-//MARK: - fetch posts
+//MARK: - fetch posts and make post
 
 
 extension HomeViewController {
     
+    //fetch posts from db
     func fetchPosts(from db: DatabaseReference) {
         
         db.observe(.value) { (snapshot) in
@@ -125,6 +113,27 @@ extension HomeViewController {
             }
             //self.table.reloadData()
         }
+    }
+    
+    //make a new post
+    func makeANewPostWithAlert() {
+        
+        var newText : UITextField?
+        let alert = UIAlertController(title: "What's hapening?", message: "", preferredStyle: .alert)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Write your post here..."
+            newText = textfield
+        }
+        let createThePost = UIAlertAction(title: "Publish", style: .default) { (self) in
+            if let postString = newText?.text {
+                let post = Post(caption: "\(postString)")
+                post.save()
+            }
+        }
+        alert.addAction(createThePost)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
     }
     
 }

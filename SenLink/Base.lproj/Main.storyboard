@@ -515,15 +515,11 @@
                                 <action selector="menuBtnPressed:" destination="9UU-0G-fDl" id="NnP-uN-wyb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="XcL-s6-2AK">
-                            <connections>
-                                <segue destination="57T-0j-vyY" kind="presentation" id="8vL-mr-Y56"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="newPostButton" destination="17Z-Ja-tkl" id="uCS-aT-Aca"/>
                         <outlet property="table" destination="gQ2-M7-5v3" id="jc8-KE-bYI"/>
+                        <segue destination="57T-0j-vyY" kind="presentation" identifier="toNewPost" id="u48-fk-mEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSN-uj-aR9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -566,12 +562,21 @@
                                     <constraint firstItem="Oh7-q6-VAc" firstAttribute="height" secondItem="7bK-xt-ddq" secondAttribute="height" multiplier="0.352113" id="bLX-AG-Ing"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EtB-v0-hMk">
+                                <rect key="frame" x="20" y="50" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="F94-zW-yMg"/>
+                                    <constraint firstAttribute="width" constant="60" id="dUz-oX-iIm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="sQj-w4-HqQ" firstAttribute="trailing" secondItem="K5K-bn-fAB" secondAttribute="trailing" constant="20" id="Bgz-ML-AG9"/>
                             <constraint firstItem="K5K-bn-fAB" firstAttribute="top" secondItem="sQj-w4-HqQ" secondAttribute="top" constant="120" id="CU5-e0-Wwq"/>
                             <constraint firstItem="K5K-bn-fAB" firstAttribute="leading" secondItem="sQj-w4-HqQ" secondAttribute="leading" constant="20" id="Hf0-Ik-1I7"/>
+                            <constraint firstItem="K5K-bn-fAB" firstAttribute="top" secondItem="EtB-v0-hMk" secondAttribute="bottom" constant="10" id="i9K-gc-YZJ"/>
+                            <constraint firstItem="EtB-v0-hMk" firstAttribute="leading" secondItem="sQj-w4-HqQ" secondAttribute="leading" constant="20" id="lj1-z6-Prb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sQj-w4-HqQ"/>
                     </view>
@@ -579,6 +584,7 @@
                     <connections>
                         <outlet property="postCaptionLabel" destination="7bK-xt-ddq" id="nxU-uY-Mrc"/>
                         <outlet property="publishBtn" destination="Oh7-q6-VAc" id="xCx-8Q-egr"/>
+                        <outlet property="userProfile" destination="EtB-v0-hMk" id="Lhp-va-2lu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsO-Bj-N8N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1067,6 +1073,5 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>

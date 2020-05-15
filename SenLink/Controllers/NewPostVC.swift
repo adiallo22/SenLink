@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class NewPostVC: UIViewController {
 
+    @IBOutlet weak var userProfile: UIImageView!
     @IBOutlet weak var publishBtn: UIButton!
     @IBOutlet weak var postCaptionLabel: UITextView!
     
+    var storage : StorageReference!
+    var profilePath : StorageReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +24,15 @@ class NewPostVC: UIViewController {
         // Do any additional setup after loading the view.
         postCaptionLabel.delegate = self
         applyStyle()
+        setReference()
+        applyStyle()
+        loadImagefromStorage()
     
+    }
+    
+    func setReference() {
+        storage = Storage.storage().reference(forURL: "gs://senlink-6d966.appspot.com")
+        profilePath = storage.child("users_profile/\(Auth.auth().currentUser!.uid).png")
     }
     
     @IBAction func pubishClicked(_ sender: UIButton) {
@@ -64,9 +76,44 @@ extension NewPostVC : UITextViewDelegate {
     
     func applyStyle() {
         publishBtn.layer.cornerRadius = 25.0
-        postCaptionLabel.layer.cornerRadius = 10.0
+        //
+        userProfile.layer.cornerRadius = 30.0
+        userProfile.layer.masksToBounds = true
+        userProfile.layer.borderWidth = 1.0
+        userProfile.layer.masksToBounds = true
+        userProfile.layer.borderColor = .init(srgbRed: 0, green: 0, blue: 1, alpha: 1)
+        //
         postCaptionLabel.backgroundColor = .white
+        postCaptionLabel.layer.cornerRadius = 10.0
+        //
         setTextViewPlaceholder()
+    }
+    
+}
+
+//MARK: - profile image
+
+extension NewPostVC {
+    //apply style on the image
+    func styleUserImage() {
+
+    }
+    
+    //load the profile from storage
+    func loadImagefromStorage() {
+        profilePath?.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            DispatchQueue.main.async {
+                self.userProfile.image = .none
+            }
+            print(error)
+          } else {
+            let image = UIImage(data: data!)
+            DispatchQueue.main.async {
+                self.userProfile.image = image
+            }
+          }
+        }
     }
     
 }

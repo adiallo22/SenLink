@@ -17,6 +17,7 @@ struct Constants {
         static let toSetting = "toSetting"
         static let toProfile = "toProfile"
         static let toGroups = "toGroups"
+        static let toNewPost = "toNewPost"
     }
     
     enum Titles {
