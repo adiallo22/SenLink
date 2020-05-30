@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomePostCellsTableViewCell: UITableViewCell {
     
@@ -44,6 +45,7 @@ class HomePostCellsTableViewCell: UITableViewCell {
     
     @IBAction func likePressed(_ sender: UIButton) {
         lCount += 1
+        likeButton.setImage(UIImage(named: "likeFilled"), for: .normal)
         print(lCount)
     }
     
