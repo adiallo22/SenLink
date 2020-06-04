@@ -35,7 +35,6 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newPostPressed(_ sender: UIButton) {
-        //makeANewPostWithAlert()
         performSegue(withIdentifier: Constants.Segues.toNewPost, sender: self)
     }
     
@@ -149,6 +148,7 @@ extension HomeViewController {
             with.setImage(plusButton, for: .normal)
             with.layer.cornerRadius = with.frame.height / 2
             with.layer.masksToBounds = true
+            with.tintColor = .black
         }
     }
     
